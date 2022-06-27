@@ -5,8 +5,7 @@ import { getSlugs } from "@/services/getSlugs";
 import { getPost } from "@/services/getPost";
 import Layout from "@/components/Layout";
 
-const Index: NextPage = ({ data }: any) => {
-  console.log(data);
+const Route: NextPage = ({ data }: any) => {
   return (
     <Layout seo={data.seo}>
       <h1>{data.title}</h1>
@@ -41,4 +40,4 @@ export async function getStaticPaths() {
   };
 }
 
-export default Index;
+export default Route;
