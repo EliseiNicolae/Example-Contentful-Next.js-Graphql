@@ -1,34 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This repository was created using:
+- Next.js
+- Contentful -> as CMS, to write the articles
+- Apollo Graphql -> to make the communication between Next.JS and Contentful.
 
-## Getting Started
+All pages are created on build time using Next.js `getStaticPaths` and `getStaticProps` for a better performance,
+and ability to scale the project using CDN.
+Before we'll start, make sure you've logged in Contentful, and have already created a space.
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
+### 1. Clone the repository
+You can paste in the Terminal the following command:
+```
+git clone https://github.com/EliseiNicolae/Example-Contentful-Next.js-Graphql
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+After that you need to create `.env.local` file, where you'll populate them with your `Space ID` and
+`Content Delivery API - access token`:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
+NEXT_PUBLIC_APP_SPACE_ID=
+CONTENT_DELIVERY_API=
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### 2. Create Content model & Content
+Must have 2 content models:
+- Blog Post
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+![blog post content model contentful](public/seo-metadata-content-model.png)
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- SEO Metadata
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![seo metadata content model](public/seo-metadata-content-model.png)
 
-## Deploy on Vercel
+### 3. Install packages
+```
+npm install
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### 4. Run the project
+```
+npm run dev
+```
+
+For any questions, contact me on this email: nicolae.elisei1999@gmail.com
